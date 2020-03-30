@@ -12,4 +12,4 @@ count n (h:t) | n == h = 1 + count n t
               | otherwise = count n t
 
 conajmniejn :: (Eq a) => [a] -> Int -> [a]
-conajmniej list n = filter (\b-> count b list >= n) list 
+conajmniejn list n = filter (\b-> count b list >= n) list 
