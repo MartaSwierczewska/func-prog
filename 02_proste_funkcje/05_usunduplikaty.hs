@@ -10,4 +10,8 @@ mogłoby być
     "usunduplikaty :: (Eq a) => [a] -> [a]"
 Funkcja byłaby wtedy bardziej uniwersalna
 -}
-usunduplikaty :: [Char] -> [Char]
+
+usunduplikaty :: Eq a => [a] -> [a]
+
+usunduplikaty [] = []
+usunduplikaty (x:xs) = x : usunduplikaty (filter (/=x) xs)
