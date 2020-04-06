@@ -10,6 +10,16 @@
 * [ ] Zmień widoczność swojego forka na **private**
   * [jak zmienić widoczność](https://docs.gitlab.com/ee/public_access/public_access.html#how-to-change-project-visibility)
 
+### Bonus: jak aktualizować swojego forka
+
+* [ ] dodaj oryginalne repo jako 'upstream': 
+    ```bash
+    git remote add upstream https://gitlab.com/agh-teaching/func-prog.git
+    ```
+* [ ] pobieraj zmiany z 'upstream', np.
+    ```bash
+    git pull upstream
+    ```
 
 ### Jak wysyłać rozwiązania
 

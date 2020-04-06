@@ -13,3 +13,18 @@ count n (h:t) | n == h = 1 + count n t
 
 conajmniejn :: (Eq a) => [a] -> Int -> [a]
 conajmniejn list n = filter (\b-> count b list >= n) list 
+
+
+
+usun_znak :: (Eq a) => a -> [a] -> [a]
+usun_znak a list = [elem | elem <- list, elem /= a]
+
+ile :: (Eq a) => a -> [a] -> Int
+ile x lista = length [y| y <- lista, y == x]
+
+conajmniejn' :: (Eq a) => [a] -> Int -> [a]
+conajmniejn' [] x = []
+conajmniejn' l@(h:t) x = if (ile h l) >= x
+                      then h : (conajmniejn'(usun_znak h t) x)
+                      else conajmniejn' t x
+
