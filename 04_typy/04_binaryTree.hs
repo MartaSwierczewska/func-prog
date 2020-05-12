@@ -6,6 +6,17 @@ b=  Node 7 (Node 5 Empty Empty)(Node 8 Empty Empty)
 myTree :: Tree Int
 myTree = Node 3 (Node 1 Empty (Node 2 Empty Empty)) (Node 4 Empty Empty)
 
+insert :: (Ord a) => a -> Tree a -> Tree a  
+insert x Empty = Node x Empty Empty 
+insert x (Node a left right)   
+    | x == a = Node x left right  
+    | x < a  = Node a (insert x left) right  
+    | x > a  = Node a left (insert x right)
+
+empty :: Tree a -> Bool
+empty Empty = True 
+empty (Node a left right) = False
+
 --wstawienie elementu
 insert :: (Ord a) => Tree a -> a -> Tree a
 insert Empty x = Node x Empty Empty
@@ -68,4 +79,3 @@ remove (Node v Empty t2) x= t2
 remove (Node v t1 Empty) x= t1
 remove (Node v t1 t2) x= insert' t1 t2
 remove Empty _ = Empty
-
